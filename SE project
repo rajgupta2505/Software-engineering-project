@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <math.h>
+#define price1 quantity*60
+#define price2 quantity*129
+#define price3 quantity*179
+#define price4 quantity*300
+#define price5 quantity*20
+
+int main() {
+    float tp = 0.0;
+    printf("         ----MADHUR DAIRY----\n\n");
+    char n[10];
+    printf("Name of Customer: ");
+    scanf("%s",n);
+    printf("\nHello '%s' what do you wish to Order!?\n\n",n);
+    printf("-----------------------------------------------------------\n\n");
+   
+    int item=0;
+    printf("Enter the number of your choice from our MENU :\n\n 1.Milk, Rs 60/lit \n 2.Butter, Rs 129/kg \n 3.Fresh Cream, Rs 179/kg \n 4.Paneer, Rs 300/kg \n 5.Lassi, Rs 20/glass \n\n");
+    scanf("%d",&item);
+    
+    
+    float quantity=0;
+    printf("\nHow much Quantity of item you want(in kg/lit)= ");
+    scanf("%f",&quantity);
+    printf("\nOrder for %.2f kg/lit of item is placed..\n\n",quantity);
+    
+    //float tp;
+    switch(item)
+    {
+    case 1:printf("Order Successful for Milk!!\n\n");
+            
+            tp=price1;
+            printf("Your Total Price of Milk is Rs. %.2f\n\n",price1);
+                   break;
+    case 2:printf("Order Successful for Butter!!\n\n");
+           
+            tp=price2;
+            printf("Your Total Price of Butter is Rs. %.2f\n\n",price2);
+            break;
+    case 3:printf("Order Successful for Fresh cream!!\n\n");
+         
+            tp=price3;
+            printf("Your Total Price of Fresh Cream is Rs. %.2f\n\n",price3);
+            break;
+    case 4:printf("Order Successful for Paneer!!\n\n");
+      
+            tp=price4;
+            printf("Your Total Price of Paneer is Rs. %.2f\n\n",price4);
+            break;
+    case 5:printf("Order Successful for Lassi!!\n\n");
+       
+            tp=price5;
+            printf("Your Total Price of Lassi is Rs. %.2f (in Glass)\n\n",price5);
+            break;
+            
+    default: printf("Invalid Option of Order!!\n\n");
+            break;
+    
+    }
+    
+    printf ("-----------------------------------------------------------\n\n");
+     
+    if (quantity<=2)
+    {
+        printf("oops SORRY!! You are not eligible for Discount :(\n\n");
+    }
+    if (quantity>2 && quantity<=5)
+    {
+        printf("CONGRATULATION !! you availed the Discount of 10%% on your Purchase :)\n\n");
+        printf("Price of your purchase with 10%% discount is :%.2f\n\n",tp*0.9);
+        
+        
+    }
+    if (quantity>5 && quantity<=7)
+    {
+        printf("CONGRATULATION !! you availed the Discount of 20%% on your Purchase :)\n\n");
+        printf("Price of your purchase with 20%% discount is :%.2f\n\n",tp*0.8);
+            }
+    if (quantity>7 )
+    {
+        printf("CONGRATULATION !! you availed the Discount of 25%% on your Purchase :)\n\n");
+        printf("Price of your purchase with 25%% discount is :%.2f\n\n",tp*0.75);
+
+    }
+    
+   
+    printf("                 ----STAY HEALTHY AND HAPPY SHOPPING :)----\n\n\n");
+    printf("             ----KEEP SAFE DISTANCE FOR COVID RESISTANCE :)----\n\n\n");
+    
+    return 0;
+}
